@@ -5,10 +5,10 @@
   
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left mb-2">
-            <h2>Add New Category</h2>
+        <div class=" mb-2">
+            <h2>Add a new Product Category</h2>
         </div>
-        <div class="pull-right">
+        <div class="">
             <a class="btn btn-primary" href="{{ route('category.index') }}"> Back</a>
         </div>
     </div>

@@ -14,8 +14,7 @@ class CategoryCRUDController extends Controller
     public function index()
     {
         $data['category'] = Category::orderBy('id','asc')->paginate(5);
-    
-        return view('category.index', $data);
+        return view('category.index', $data);  // it means the index file that we have inside category
     }
 
     /**
@@ -25,7 +24,7 @@ class CategoryCRUDController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('category.create'); // it means the file create that we have inside category
     }
 
     /**
@@ -42,7 +41,6 @@ class CategoryCRUDController extends Controller
         ]);
     
         Category::create($request->all());
-     
         return redirect()->route('category.index')
                         ->with('success','Product-category has been created successfully.');    }
 
