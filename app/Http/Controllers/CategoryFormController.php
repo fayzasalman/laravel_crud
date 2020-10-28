@@ -15,8 +15,8 @@ class CategoryFormController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
-            'parent_id'=>'required',     ]);
+            'name'      =>'required',
+            'parent_id' =>'required',     ]);
         $category = new Category; // name of the table
         $category->name = $request->name;
         $category->parent_id = $request->parent_id;

@@ -9,7 +9,7 @@
             <h2>Add a new Product Category</h2>
         </div>
         <div class="">
-            <a class="btn btn-primary" href="{{ route('category.index') }}"> Back</a>
+            <a class="btn btn-secondary" href="{{ route('category.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -27,7 +27,6 @@
    
 <form action="{{ route('category.store') }}" method="POST">
     @csrf
-  
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -39,6 +38,12 @@
             <div class="form-group">
                 <strong>Parent ID:</strong>
                 <input type="text" name="parent_id" class="form-control" placeholder="Product Parent ID">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <!-- <strong>Status:</strong> -->
+                <input type="hidden" name="status" class="form-control" placeholder="Status">
             </div>
         </div>
         <button type="submit" class="btn btn-success ml-3">Submit</button>

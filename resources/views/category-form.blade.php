@@ -29,6 +29,9 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <input type="hidden" id="status" name="status" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </form>
                         </div>

@@ -23,6 +23,7 @@
             <th>P.No</th>
             <th>Product Category Name</th>
             <th>Parent ID</th>
+            <th>Status</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($category as $catego)
@@ -30,6 +31,7 @@
             <td>{{ $catego->id }}</td>
             <td>{{ $catego->name }}</td>
             <td>{{ $catego->parent_id }}</td>
+            <td>{{ $catego->status }}</td>
             <td>
                 <form action="{{ route('category.destroy',$catego->id) }}" method="POST">
     

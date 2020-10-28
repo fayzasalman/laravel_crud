@@ -24,12 +24,11 @@ class CategoryCRUDController extends Controller
      */
     public function create()
     {
-        return view('category.create'); // it means the file create that we have inside category
+        return view('category.create'); // it means the file create that we have inside category folder
     }
 
     /**
      * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -40,7 +39,10 @@ class CategoryCRUDController extends Controller
             'parent_id' => 'required',
         ]);
     
-        Category::create($request->all());
+        $category = new Category; // name of the table
+        $category->name = $request->name;
+        $category->parent_id = $request->parent_id;
+        $category->save();
         return redirect()->route('category.index')
                         ->with('success','Product-category has been created successfully.');    }
 
@@ -50,11 +52,10 @@ class CategoryCRUDController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
-    {
-        return view('category.show',compact('category'));
-    }
-
+    // public function show(Category $category)
+    // {
+    //     return view('category.show',compact('category'));
+    // }
     /**
      * Show the form for editing the specified resource.
      *
@@ -76,14 +77,14 @@ class CategoryCRUDController extends Controller
     public function update(Request $request , Category $category)
     {
         $request->validate([
-            'name' => 'required',
+            'name'      => 'required',
             'parent_id' => 'required',
+            'status'    => 'required',
         ]);
-    
         $category->update($request->all());
     
         return redirect()->route('category.index')
-                        ->with('success','Category updated successfully');    }
+                         ->with('success','Category updated successfully');    }
 
     /**
      * Remove the specified resource from storage.
@@ -96,5 +97,5 @@ class CategoryCRUDController extends Controller
         $category->delete();
     
         return redirect()->route('category.index')
-                        ->with('success','category has been deleted successfully');    }
+                         ->with('success','category has been deleted successfully');    }
 }
