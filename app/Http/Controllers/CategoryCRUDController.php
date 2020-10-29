@@ -13,7 +13,7 @@ class CategoryCRUDController extends Controller
      */
     public function index()
     {
-        $data['category'] = Category::orderBy('id','asc')->paginate(5);
+        $data['category'] = Category::orderBy('id','desc')->paginate(5);
         return view('category.index', $data);  // it means the index file that we have inside category
     }
 
@@ -24,9 +24,8 @@ class CategoryCRUDController extends Controller
      */
     public function create()
     {
-        return view('category.create'); // it means the file create that we have inside category folder
+        return view('category.create'); // it means the create.php that we have inside category folder
     }
-
     /**
      * Store a newly created resource in storage.
      * @param  \Illuminate\Http\Request  $request
@@ -84,7 +83,7 @@ class CategoryCRUDController extends Controller
         $category->update($request->all());
     
         return redirect()->route('category.index')
-                         ->with('success','Category updated successfully');    }
+                         ->with('success','Category updated successfully.');    }
 
     /**
      * Remove the specified resource from storage.
@@ -95,7 +94,6 @@ class CategoryCRUDController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-    
         return redirect()->route('category.index')
-                         ->with('success','category has been deleted successfully');    }
+                         ->with('success','category has been deleted successfully.');    }
 }
