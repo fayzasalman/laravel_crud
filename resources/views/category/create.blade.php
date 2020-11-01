@@ -8,15 +8,15 @@
         <div class=" mb-2">
             <h2>Add a new Product Category</h2>
         </div>
-        <div class="">
+        <!-- <div class="">
             <a class="btn btn-secondary" href="{{ route('category.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
    
 @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <!-- <strong>Whoops!</strong> There were some problems with your input.<br><br> -->
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -43,10 +43,11 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <!-- <strong>Status:</strong> -->
-                <input type="hidden" name="status" class="form-control" placeholder="Status">
+                <input type="hidden" name="status" class="form-control">
             </div>
         </div>
-        <button type="submit" class="btn btn-success ml-3">Submit</button>
+        <a class="btn btn-secondary ml-3" href="{{ route('category.index') }}"> <i class="fa fa-chevron-circle-left"></i> Back </a>
+            <button type="submit" class="btn btn-success ml-3"><i class="fa fa-check"></i> Submit</button>
     </div>
    
 </form>
