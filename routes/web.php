@@ -23,5 +23,9 @@ Route::post('store-form', [CategoryFormController::class, 'store']);
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('category', CategoryCRUDController::class);
+
+Route::group(['middleware'=>"auth"], function (){
+ Route::resource('category', CategoryCRUDController::class);
+});
+
 // Route::view('category.create', CategoryCRUDController::class)->;
