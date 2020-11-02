@@ -38,7 +38,7 @@
                     @method('DELETE')
                     <!-- <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
-
+                    <a class="btn btn-success" href="{{ route('category.show',$catego->id) }}"><i class="fa fa-eye"></i>  Show</a>
                     <a class="btn btn-info" href="{{ route('category.edit',$catego->id) }}"><i class="fa fa-pencil"></i>  Edit</a>
                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>  Delete</button>
                 </form>

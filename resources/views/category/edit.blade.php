@@ -42,19 +42,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Status:</strong>
-                    <input type="text" name="status" value="{{ $category->status }}" class="form-control"
-                        placeholder="Change the Status">
-                </div>
-            </div>
-            <!-- <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Status:</strong>
-                    <select id="status_change" class="btn btn-basic">
-                        <option value="inactive" {{ $category->status == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                        <option value="active" {{ $category->status == 'active' ? 'selected' : '' }}>Active</option>
+                    <select class="btn btn-light" name="status">
+                        <option value="inactive" {{ $category->status == 'inactive' ? 'selected' : '' }}> Inactive
+                        </option>
+                        <option value="active" {{ $category->status == 'active'     ? 'selected' : '' }}> Active
+                        </option>
                     </select>
                 </div>
-            </div> -->
+            </div>
             <!-- <select id="status_change" class="btn btn-basic">
                             <option value="" @if($category->status == '') ? selected : null @endif disabled>Change the Status</option>
                             <option value="active" @if($category->status == 'active') ? selected : null @endif> Active

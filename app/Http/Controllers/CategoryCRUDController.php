@@ -51,10 +51,10 @@ class CategoryCRUDController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show(Category $category)
-    // {
-    //     return view('category.show',compact('category'));
-    // }
+    public function show(Category $category)
+    {
+        return view('category.show',compact('category'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

@@ -53,7 +53,7 @@
                         @endif
                         @else
                         <li class="nav-item">
-                            <a href="category" class="nav-link">Category Details</a>
+                            <a href="/category" class="nav-link">Category Details</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
