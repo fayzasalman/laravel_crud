@@ -50,13 +50,6 @@
                     </select>
                 </div>
             </div>
-            <!-- <select id="status_change" class="btn btn-basic">
-                            <option value="" @if($category->status == '') ? selected : null @endif disabled>Change the Status</option>
-                            <option value="active" @if($category->status == 'active') ? selected : null @endif> Active
-                            </option>
-                            <option value="inactive" @if($category->status == 'inactive') ? selected : null @endif>Inactive
-                            </option>
-                   </select> -->
             <a class="btn btn-secondary ml-3" href="{{ route('category.index') }}"> <i class="fa fa-chevron-circle-left"></i> Back </a>
             <button type="submit" class="btn btn-success ml-3"><i class="fa fa-check"></i> Submit</button>
 

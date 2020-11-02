@@ -4,7 +4,7 @@
     <a class="btn btn-secondary ml-0.2" href="{{ route('category.index') }}"> <i class="fa fa-chevron-circle-left"></i>
         Back </a>
 
-    <div class="card-header text-success text-center">
+    <div class="card-header text-info text-center">
         <h3 class="card-title"><strong>Product No:</strong> {{ $category->id }}</h3>
     </div>
     <div class="card-body text-center">
