@@ -35,8 +35,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Parent ID:</strong>
-                    <input type="text" name="parent_id" value="{{ $category->parent_id }}" class="form-control"
-                        placeholder="parent_id">
+ 
+                    <select class="btn btn-light" name="id">
+                       <option value="0">Set As Parent</option>
+                        @foreach($parents as $value )
+                        <option value="{{ $value->id }}" @if($value->id == $category->parent_id) selected="selected" @endif > {{ $value->name  }}</option>
+                        @endforeach
+                        </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -50,7 +55,8 @@
                     </select>
                 </div>
             </div>
-            <a class="btn btn-secondary ml-3" href="{{ route('category.index') }}"> <i class="fa fa-chevron-circle-left"></i> Back </a>
+            <a class="btn btn-secondary ml-3" href="{{ route('category.index') }}"> <i
+                    class="fa fa-chevron-circle-left"></i> Back </a>
             <button type="submit" class="btn btn-success ml-3"><i class="fa fa-check"></i> Submit</button>
 
         </div>

@@ -61,9 +61,11 @@ class CategoryCRUDController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request ,Category $category)
+    public function edit(Request $request, $id)
     {
-        return view('category.edit',compact('category'));
+        $category = Category::where('id', $id)->first();
+        $parents = Category::get(); //whereStatus(1)->
+        return view('category.edit', compact('category', 'parents'));
     }
 
     /**
@@ -77,11 +79,9 @@ class CategoryCRUDController extends Controller
     {
         $request->validate([
             'name'      => 'required',
-            'parent_id' => 'required',
             'status'    => 'required',
         ]);
         $category->update($request->all());
-    
         return redirect()->route('category.index')
                          ->with('success','Category updated successfully.');    }
 
