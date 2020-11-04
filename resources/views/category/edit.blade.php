@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <strong>Parent ID:</strong>
  
-                    <select class="btn btn-light" name="id">
+                    <select class="btn btn-light" name="parent_id">
                        <option value="0">Set As Parent</option>
                         @foreach($parents as $value )
                         <option value="{{ $value->id }}" @if($value->id == $category->parent_id) selected="selected" @endif > {{ $value->name  }}</option>

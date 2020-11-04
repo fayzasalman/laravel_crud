@@ -34,12 +34,12 @@ class CategoryCRUDController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name'      => 'required',
             'parent_id' => 'required',
         ]);
     
-        $category = new Category; // name of the table
-        $category->name = $request->name;
+        $category            = new Category; // name of the table
+        $category->name      = $request->name;
         $category->parent_id = $request->parent_id;
         $category->save();
         return redirect()->route('category.index')
@@ -63,8 +63,8 @@ class CategoryCRUDController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $category = Category::where('id', $id)->first();
-        $parents = Category::get(); //whereStatus(1)->
+        $category  = Category::where('id', $id)->first();
+        $parents   = Category::whereStatus(1)->get();
         return view('category.edit', compact('category', 'parents'));
     }
 
