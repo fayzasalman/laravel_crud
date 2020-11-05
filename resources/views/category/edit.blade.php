@@ -35,13 +35,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Parent ID:</strong>
- 
+
                     <select class="btn btn-light" name="parent_id">
-                       <option value="0">Set As Parent</option>
+                        <option value="0">Set As Parent</option>
                         @foreach($parents as $value )
-                        <option value="{{ $value->id }}" @if($value->id == $category->parent_id) selected="selected" @endif > {{ $value->name  }}</option>
+                        <option value="{{ $value->id }}" @if($value->id == $category->parent_id) selected="selected"
+                            @endif > {{ $value->name  }}</option>
                         @endforeach
-                        </select>
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

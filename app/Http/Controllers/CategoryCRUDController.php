@@ -43,7 +43,7 @@ class CategoryCRUDController extends Controller
         $category->parent_id = $request->parent_id;
         $category->save();
         return redirect()->route('category.index')
-                        ->with('success','Product-category has been created successfully.');    }
+                         ->with('success','Product-category has been created successfully.');    }
 
     /**
      * Display the specified resource.
@@ -55,6 +55,23 @@ class CategoryCRUDController extends Controller
     {
         return view('category.show',compact('category'));
     }
+    
+    /**
+     * Responds with a welcome message with instructions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function changeStatus(Request $request)
+    {
+    //     $category = Category::findOrFail($request->id);
+    //     $category->active = !$category->active;
+        $category = Category::find($request->id);
+        $category->status = $request->status;
+        $category->save();
+        // dd($category);
+        return response()->json(['success'=>'Status change successfully.']);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
