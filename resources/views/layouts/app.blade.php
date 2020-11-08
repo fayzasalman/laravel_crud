@@ -16,10 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <!-- Styles -->
@@ -89,22 +88,23 @@
     </div>
 </body>
 <script type="text/javascript">
-$(document).ready(function() {
-    $('.toggle').click(function() {
-
-        var status = $(this).children().prop('checked') == true ? 'active' : 'inactive';
+$(function() {
+    $('.toggle-class').change(function() {
+        var status = $(this).prop('checked') == true ? 'active' : 'inactive';
         var id = $(this).data('id');
         $.ajax({
-            type: "POST",
+            type: 'POST',
             dataType: "json",
-            url: 'statusupdate',
+            url: 'statusUpdate',
             data: {
                 'status': status,
                 'id': id
             },
-            headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
             success: function(data) {
-                console.log(data.success)
+                console.log(data.success);
             }
         });
     });

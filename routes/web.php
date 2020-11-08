@@ -25,8 +25,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware'=>["auth"]], function (){
  Route::resource('category', CategoryCRUDController::class);
- Route::post('statusupdate', CategoryCRUDController::class , 'changeStatus');
+ Route::post('statusUpdate', [CategoryCRUDController::class, 'changeStatus']);
 
 });
 
 // Route::view('category.create', CategoryCRUDController::class)->;
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
