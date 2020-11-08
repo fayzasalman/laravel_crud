@@ -68,9 +68,8 @@ class CategoryCRUDController extends Controller
         $category = Category::find($request->id);
         $category->status = $request->status;
         $category->save();
-        dd($request->all());
         // dd($category);
-        return response()->json(['success'=>'Status change successfully.']);
+        return response()->json();
     }
 
     /**

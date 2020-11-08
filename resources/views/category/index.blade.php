@@ -34,7 +34,7 @@
             <td>{{ $catego->parent_id }}</td>
 
             <td>
-                <input data-id="{{ $catego->id }}" class="toggle-class" data-on="Active"
+                <input data-id="{{ $catego->id }}" id="tgs" class="toggle-class"  data-on="Active"
                     data-off="Inactive" data-onstyle="warning" data-offstyle="dark" type="checkbox"
                     {{ $catego->status == 'active' ? 'checked' : '' }}>
             </td>
