@@ -94,10 +94,9 @@
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
-        $('.toggle-class').click('.refresher',function() {
-            // $('input[type=checkbox][data-toggle^=toggle]').bootstrapToggle();
-            var status = $(this).prop('checked') == true ? 'active' : 'inactive';
-            var id = $(this).data('id');
+        $('.toggle').click(function() {
+            var status = $(this).children().prop('checked') == true ? 'inactive' : 'active';
+            var id = $(this).children().data('id');
             $.ajax({
                 type: 'POST',
                 dataType: "json",
