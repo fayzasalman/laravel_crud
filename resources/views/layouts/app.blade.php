@@ -92,9 +92,9 @@
         </main>
     </div>
 </body>
-<!-- <script type="text/javascript">
-$(function() {
-        $('.toggle-class').click(function() {
+<script type="text/javascript">
+$(document).ready(function() {
+        $('.toggle-class').click('.refresher',function() {
             // $('input[type=checkbox][data-toggle^=toggle]').bootstrapToggle();
             var status = $(this).prop('checked') == true ? 'active' : 'inactive';
             var id = $(this).data('id');
@@ -112,12 +112,12 @@ $(function() {
                 success: function(data) {
                     Swal.fire(
                         'GREAT!', 'Status changed successfully', 'success')
-                    // alert.success(data.success);
+                        location.reload();
                     console.log(data.success);
                 }
             });
         });
 })
-</script> -->
+</script>
 
 </html>

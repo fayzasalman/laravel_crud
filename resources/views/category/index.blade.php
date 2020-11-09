@@ -19,12 +19,13 @@
         <p>{{ $message }}</p>
     </div>
     @endif
-    <table class="table table-bordered">
+    <table id="table-to-refresh" class="table table-bordered">
         <tr>
             <th>Product.No</th>
             <th>Product Category Name</th>
             <th>Parent ID</th>
-            <th>Status</th>
+            <th>Status Label</th>
+            <th>Status checkbox</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($category as $catego)
@@ -32,17 +33,18 @@
             <td>{{ $catego->id }}</td>
             <td>{{ $catego->name }}</td>
             <td>{{ $catego->parent_id }}</td>
-            <td>@if($catego->status =='active')
+            <td class="refresher">
+            @if($catego->status =='active')
                 <label class="badge badge-success">Active</label>
                 @else
                 <label class="badge badge-danger">Inactive</label>
                 @endif
             </td>
-            <!-- <td>
-                <input data-id="{{ $catego->id }}" class="toggle-class" data-toggle="toggle" data-on="Active"
+            <td>
+                <input data-id="{{ $catego->id }}" class="toggle-class" data-on="Active"
                     data-off="Inactive" data-onstyle="warning" data-offstyle="dark" type="checkbox"
                     {{ $catego->status == 'active' ? 'checked' : '' }}>
-            </td> -->
+            </td>
             <td>
                 <form action="{{ route('category.destroy',$catego->id) }}" method="POST">
                     @csrf
