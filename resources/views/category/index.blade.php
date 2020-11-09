@@ -32,13 +32,17 @@
             <td>{{ $catego->id }}</td>
             <td>{{ $catego->name }}</td>
             <td>{{ $catego->parent_id }}</td>
-
-            <td>
-                <input data-id="{{ $catego->id }}" id="tgs" class="toggle-class"  data-on="Active"
+            <td>@if($catego->status =='active')
+                <label class="badge badge-success">Active</label>
+                @else
+                <label class="badge badge-danger">Inactive</label>
+                @endif
+            </td>
+            <!-- <td>
+                <input data-id="{{ $catego->id }}" class="toggle-class" data-toggle="toggle" data-on="Active"
                     data-off="Inactive" data-onstyle="warning" data-offstyle="dark" type="checkbox"
                     {{ $catego->status == 'active' ? 'checked' : '' }}>
-            </td>
-
+            </td> -->
             <td>
                 <form action="{{ route('category.destroy',$catego->id) }}" method="POST">
                     @csrf

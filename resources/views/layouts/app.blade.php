@@ -16,14 +16,16 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script> -->
 
     <!-- its for the swal alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -90,30 +92,32 @@
         </main>
     </div>
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(function() {
-    $('.toggle-class').change(function() {
-        var status = $(this).prop('checked') == true ? 'active' : 'inactive';
-        var id = $(this).data('id');
-        $.ajax({
-            type: 'POST',
-            dataType: "json",
-            url: 'statusUpdate',
-            data: {
-                'status': status,
-                'id': id
-            },
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            success: function(data) {
-                Swal.fire(
-                    'GREAT!',  'Status changed successfully', 'success' )
-                // alert.success(data.success);
-            }
+        $('.toggle-class').click(function() {
+            // $('input[type=checkbox][data-toggle^=toggle]').bootstrapToggle();
+            var status = $(this).prop('checked') == true ? 'active' : 'inactive';
+            var id = $(this).data('id');
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                url: 'statusUpdate',
+                data: {
+                    'status': status,
+                    'id': id
+                },
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                success: function(data) {
+                    Swal.fire(
+                        'GREAT!', 'Status changed successfully', 'success')
+                    // alert.success(data.success);
+                    console.log(data.success);
+                }
+            });
         });
-    });
 })
-</script>
+</script> -->
 
 </html>

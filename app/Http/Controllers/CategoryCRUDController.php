@@ -61,16 +61,15 @@ class CategoryCRUDController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function changeStatus(Request $request)
-    {
-    //     $category = Category::findOrFail($request->id);
-    //     $category->active = !$category->active;
-        $category = Category::find($request->id);
-        $category->status = $request->status;
-        $category->save();
-        // dd($category);
-        return response()->json();
-    }
+    // public function changeStatus(Request $request)
+    // {
+    // //     $category = Category::findOrFail($request->id);
+    // //     $category->active = !$category->active;
+    //     $category = Category::find($request->id);
+    //     $category->status = $request->status;
+    //     $category->save();
+    //     return response()->json(['success'=>' status change successfully.']);
+    // }
 
     /**
      * Show the form for editing the specified resource.
