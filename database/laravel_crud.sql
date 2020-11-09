@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2020 at 02:12 PM
+-- Generation Time: Nov 09, 2020 at 02:24 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -41,18 +41,15 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `parent_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Perfume - Kids', '1111', 'active', '2020-10-28 12:09:10', '2020-10-29 06:18:44'),
-(2, 'Clothes', '222', 'inactive', '2020-10-28 06:04:11', '2020-10-28 06:04:11'),
-(3, 'W-perfume', '234', 'active', '2020-10-28 09:03:27', '2020-10-28 09:03:27'),
-(4, 'Man Clothes', '12', 'active', '2020-10-28 06:04:22', '2020-10-28 06:04:22'),
-(5, 'Woman - Clothes', '1234', 'active', '2020-10-28 06:04:40', '2020-10-28 07:09:30'),
-(6, 'Hair ACC', '234', 'inactive', '2020-10-28 06:04:31', '2020-10-28 06:04:31'),
-(7, 'Skin Care', '12', 'inactive', '2020-10-28 06:04:48', '2020-10-28 06:04:48'),
-(8, 'cosmetics', '22', 'active', '2020-10-28 05:44:07', '2020-10-29 09:29:00'),
-(69, 'shoes', '123412', 'inactive', '2020-10-29 04:44:59', '2020-10-29 08:20:08'),
-(70, 'Man sunglassess', '478', 'active', '2020-10-29 04:45:30', '2020-10-29 06:20:03'),
-(74, 'Woman Access', '121', 'active', '2020-10-29 09:28:14', '2020-10-29 10:02:10'),
-(75, 'admin', '1234332233', 'inactive', '2020-10-29 10:11:37', '2020-10-29 10:11:37');
+(1, 'Cosmetics', '4', 'inactive', '2020-11-03 10:25:01', '2020-11-03 10:25:01'),
+(3, 'Man', '2', 'inactive', '2020-11-03 10:25:14', '2020-11-09 09:56:01'),
+(4, 'Woman', '3', 'active', '2020-11-03 10:25:20', '2020-11-08 05:09:37'),
+(5, 'Kids - Perfume', '0', 'active', '2020-11-03 10:25:44', '2020-11-08 05:09:11'),
+(6, 'Man - Perfume', '3', 'active', '2020-11-03 10:25:52', '2020-11-08 05:09:32'),
+(8, 'W - Shoes', '4', 'inactive', '2020-11-03 10:26:39', '2020-11-09 09:55:02'),
+(9, 'K - Shoes', '2', 'inactive', '2020-11-03 10:26:54', '2020-11-09 09:45:44'),
+(11, 'Woman Dresses', '0', 'inactive', '2020-11-04 02:56:23', '2020-11-09 10:22:30'),
+(18, 'Woman - Perfume', '0', 'active', '2020-11-08 10:11:18', '2020-11-09 10:22:29');
 
 -- --------------------------------------------------------
 
@@ -127,7 +124,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$/4b0Tpu8tDUZHm8Ihdj.N.GDs23GdnQHLy4OXQoeWw6GH2e7jVfHq', NULL, '2020-10-28 05:35:30', '2020-10-28 05:35:30');
+(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$/4b0Tpu8tDUZHm8Ihdj.N.GDs23GdnQHLy4OXQoeWw6GH2e7jVfHq', NULL, '2020-10-28 05:35:30', '2020-10-28 05:35:30'),
+(2, 'Faeza', 'Faeza@gmail.com', NULL, '$2y$10$VSWgS6RrOFxr4pufmo1x6OhQjAE8ZWweoFMjnHJwDifqRjw7o1RaO', NULL, '2020-11-01 04:42:35', '2020-11-01 04:42:35');
 
 --
 -- Indexes for dumped tables
@@ -173,7 +171,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -191,7 +189,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
